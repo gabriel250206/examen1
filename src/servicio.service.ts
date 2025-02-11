@@ -5,6 +5,6 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class ServicioService {
-  private apiUrl = '';
+  private apiUrl = 'https://zenquotes.io/api/random';
   constructor(private http:HttpClient) { }
 }

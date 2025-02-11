@@ -1,0 +1,44 @@
+
+<ion-content padding style="background-color: black">
+  <h2 style="color: yellow">Lista</h2>
+  <input #nameInput type="text" placeholder="Nombre de la pelicula" />
+  <input #yearInput type="number" placeholder="Año en que salió" />
+  <input #productorInput type="text" placeholder="Nombre del productor" />
+  <input #casaInput type="text" placeholder="Casa productora" />
+  <input #protaInput type="text" placeholder="Protagonista" />
+
+  <button
+    style="color: blue"
+    (click)="addItem(nameInput.value, yearInput.value,productorInput.value,casaInput.value,protaInput.value); nameInput.value = ''; yearInput.value = '';productorInput.value='';casaInput.value='';protaInput.value=''"
+  >
+    Agregar
+  </button>
+
+  <table
+    border="1"
+    style="margin-top: 20px; width: 100%; text-align: left; color: white"
+  >
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Año</th>
+        <th>Productor</th>
+        <th>Casa</th>
+        <th>Protagonista</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.id }}</td>
+        <td>{{ item.name }}</td>
+        <td>{{ item.year }}</td>
+        <td>{{item.productor}}</td>
+        <td>{{item.casa}}</td>
+        <td>{{item.prota}}</td>
+        
+       
+      </tr>
+    </tbody>
+  </table>
+</ion-content>
